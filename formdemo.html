@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Forms</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <h1 class="header">Student Registeration Form</h1>
+    <hr class="line" />
+    <form action="" method="" class="form-body">
+      <label for="name">Name</label>
+      <input
+        type="text"
+        id="name"
+        name="username"
+        placeholder="Enter Your Name"
+        required
+        class="input"
+      />
+      <br />
+      <label for="password" label>Password</label
+      ><input
+        type="password"
+        id="password"
+        name="pass"
+        required
+        placeholder="Enter Your Password"
+        class="input"
+      />
+      <br />
+      <label for="age" class="label"></label>Age<input
+        type="number"
+        name="age"
+        id="age"
+        placeholder="Enter Your age"
+        class="input"
+      />
+      <br />
+      <label for="" class="label">Gender</label>
+      <br />
+      <input type="radio" name="gender" value="male" />
+      <br />
+      <input type="radio" name="gender" value="male" />
+
+      <br />
+      <label for="" class="label">Hobby</label>
+      <br />
+      <input type="checkbox" />
+      <br />
+      <input type="checkbox" />
+      <br />
+      <input type="checkbox" />
+      <br />
+      <input type="checkbox" />
+      <br />
+      <label for="food" class="label">Food Choice</label>
+      <select name="food" id="food" class="select">
+        <option value="">None</option>
+        <option value="">Friend Rice</option>
+        <option value="">Chinese Tofu</option>
+        <option value="">Banku and Okro</option>
+        <option value="">Everything Some</option>
+      </select>
+      <br />
+      <label for="" class="shoe">Shoes</label>
+      <select name="shoes" id="food" multiple class="select">
+        <option value="">Nike</option>
+        <option value="">Addidas</option>
+        <option value="">Balenciaga</option>
+        <option value="">Loafer</option>
+      </select>
+      <br />
+      <textarea name="about" id="about" class="textarea"></textarea>
+
+      <input type="submit" name="submit" id="submit" />
+    </form>
+  </body>
+</html>
