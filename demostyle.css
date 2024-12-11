@@ -1,0 +1,10 @@
+.edit_delete_mark {
+  list-style: none;
+  display: none;
+}
+.edit_division {
+  display: none;
+}
+.complete {
+  text-decoration: line-through;
+}
