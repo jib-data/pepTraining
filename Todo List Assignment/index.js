@@ -4,33 +4,34 @@ var submitEditButton = document.querySelector(".edit_input_button");
 var editInput = document.querySelector(".edit_input");
 var editMarkDelete = document.querySelector(".edit_delete_mark");
 input.value = "";
+var mark = document.querySelector(".mark");
+var deleteList = document.querySelector(".delete");
 
 var tasks = document.querySelector("#myUL");
 var editDivision = document.querySelector(".edit_division");
 
 submit.addEventListener("click", addItem);
 tasks.addEventListener("click", (e) => {
+  var targetItem = e.target;
   editMarkDelete.style.display = "block";
-  var targetClicked = e.target;
-  editMarkDelete.addEventListener("click", (e) => {
-    let clickedOption = e.target.textContent;
-    console.log(clickedOption);
-    if (clickedOption === "Mark") {
-      targetClicked.classList.add("complete");
-      editMarkDelete.style.display = "none";
-    }
-    if (clickedOption === "Edit") {
-      editDivision.style.display = "block";
-      submitEditButton.addEventListener("click", (e) => {
-        console.log(editInput.value);
-        if (editInput.value != "") {
-          targetClicked.textContent = editInput.value;
-          editMarkDelete.style.display = "none";
-          editInput.value = "";
-        }
+
+  editMarkDelete.addEventListener(
+    "click",
+    (e) => {
+      mark.addEventListener("click", (e) => {
+        targetItem.classList.add("complete");
+        e.stopPropagation();
       });
-    }
-  });
+
+      deleteList.addEventListener("click", (e) => {
+        targetItem.remove();
+        e.stopPropagation();
+      });
+
+      editMarkDelete.style.display = "none";
+    },
+    true
+  );
 });
 
 function addItem(e) {
@@ -38,10 +39,10 @@ function addItem(e) {
     appendItem();
   }
 }
+
 function appendItem() {
   let newItem = document.createElement("li");
   newItem.innerHTML = input.value;
-  //   let list = document.querySelector("#myUL");
 
   tasks.appendChild(newItem);
   input.value = "";
@@ -49,5 +50,7 @@ function appendItem() {
 function editItem(targetItem) {
   targetItem.textContent = "";
 }
-function deleteItem(e) {}
+function deleteItem(e) {
+  e.target;
+}
 function markAsComplete(e) {}
